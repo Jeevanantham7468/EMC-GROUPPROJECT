@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comic Store</title>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Comic Book Store</h1>
+    <p>Single issues, graphic novels, manga, and collector variants.</p>
+    <nav>
+      <ul>
+        <li><a href="#search">Search</a></li>
+        <li><a href="#featured">Featured</a></li>
+        <li><a href="#catalog">Catalog</a></li>
+        <li><a href="#pull-list">Pull List</a></li>
+        <li><a href="#cart">Cart</a></li>
+        <li><a href="#checkout">Checkout</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+  <hr>
+
+  <!-- Search & Filter -->
+  <section id="search">
+    <h2>Search & Filter</h2>
+    <form action="#" method="get">
+      <label for="search-box">Search Title:</label>
+      <input type="search" id="search-box" name="query" placeholder="Spider-Man, Batman...">
+      <label for="publisher">Publisher:</label>
+      <select id="publisher" name="publisher">
+        <option value="">All</option>
+        <option value="marvel">Marvel</option>
+        <option value="dc">DC</option>
+        <option value="manga">Manga</option>
+        <option value="image">Image</option>
+      </select>
+      <label for="era">Era:</label>
+      <select id="era" name="era">
+        <option value="">All Eras</option>
+        <option value="golden">Golden Age</option>
+        <option value="silver">Silver Age</option>
+        <option value="modern">Modern Age</option>
+      </select>
+      <label for="sort">Sort:</label>
+      <select id="sort" name="sort">
+        <option value="popular">Popular</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+      </select>
+      <button type="submit">Filter</button>
+      <button type="reset">Reset</button>
+    </form>
+  </section>
+  <hr>
+
+  <!-- Featured Issue -->
+  <section id="featured">
+    <h2>Featured Key Issue</h2>
+    <article>
+      <h3>The Amazing Spider-Man #300 (1988)</h3>
+      <p><strong>Notes:</strong> 1st full appearance of Venom (Eddie Brock).</p>
+      <p><strong>Stock Left:</strong> <progress value="3" max="10">3/10</progress> (3 copies remaining)</p>
+      <form action="#" method="post">
+        <label for="grade-feat">Condition:</label>
+        <select id="grade-feat" name="grade">
+          <option value="vf">Raw - Very Fine (8.0) - $385.00</option>
+          <option value="nm">Raw - Near Mint (9.4) - $495.00</option>
+          <option value="cgc">CGC Slab (9.6) - $750.00</option>
+        </select>
+        <label for="qty-feat">Qty:</label>
+        <input type="number" id="qty-feat" name="qty" value="1" min="1" max="3">
+        <button type="submit">Add to Cart</button>
+      </form>
+    </article>
+  </section>
+  <hr>
+
+  <!-- Catalog Table -->
+  <section id="catalog">
+    <h2>Comic Catalog</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Publisher</th>
+          <th>Grade</th>
+          <th>Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Batman: The Killing Joke</td>
+          <td>DC Comics</td>
+          <td>Near Mint (9.4)</td>
+          <td>$120.00</td>
+          <td><button type="button">Add</button></td>
+        </tr>
+        <tr>
+          <td>X-Men #1 (1991)</td>
+          <td>Marvel</td>
+          <td>Mint (9.8)</td>
+          <td>$25.00</td>
+          <td><button type="button">Add</button></td>
+        </tr>
+        <tr>
+          <td>Berserk Vol. 1</td>
+          <td>Manga</td>
+          <td>Brand New</td>
+          <td>$14.99</td>
+          <td><button type="button">Add</button></td>
+        </tr>
+        <tr>
+          <td>Spawn #1</td>
+          <td>Image</td>
+          <td>Near Mint (9.4)</td>
+          <td>$45.00</td>
+          <td><button type="button">Add</button></td>
+        </tr>
+        <tr>
+          <td>Action Comics #1 Reprint</td>
+          <td>DC Comics</td>
+          <td>Mint (9.8)</td>
+          <td>$19.99</td>
+          <td><button type="button">Add</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <hr>
+
+  <!-- Pull List -->
+  <section id="pull-list">
+    <h2>Monthly Pull List Subscription</h2>
+    <p>Reserve recurring weekly issues:</p>
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Select Series</legend>
+        <input type="checkbox" id="p1" name="pull" value="spiderman"> <label for="p1">The Amazing Spider-Man</label><br>
+        <input type="checkbox" id="p2" name="pull" value="batman"> <label for="p2">Batman / Detective Comics</label><br>
+        <input type="checkbox" id="p3" name="pull" value="xmen"> <label for="p3">Uncanny X-Men</label><br>
+        <input type="checkbox" id="p4" name="pull" value="manga"> <label for="p4">One Piece Monthly</label>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>Protection Choice</legend>
+        <input type="radio" id="b1" name="bag" value="standard" checked> <label for="b1">Standard Bag & Board (Free)</label><br>
+        <input type="radio" id="b2" name="bag" value="mylar"> <label for="b2">Archival Mylar Sleeve (+$0.75)</label>
+      </fieldset>
+      <br>
+      <button type="submit">Save Pull List</button>
+    </form>
+  </section>
+  <hr>
+
+  <!-- Shopping Cart -->
+  <section id="cart">
+    <h2>Shopping Cart</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Grade</th>
+          <th>Price</th>
+          <th>Qty</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>The Amazing Spider-Man #300</td>
+          <td>Raw VF (8.0)</td>
+          <td>$385.00</td>
+          <td>1</td>
+          <td>$385.00</td>
+          <td><button type="button">Delete</button></td>
+        </tr>
+        <tr>
+          <td>X-Men #1 (1991)</td>
+          <td>Mint (9.8)</td>
+          <td>$25.00</td>
+          <td>2</td>
+          <td>$50.00</td>
+          <td><button type="button">Delete</button></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan="4" align="right">Subtotal:</th>
+          <td colspan="2">$435.00</td>
+        </tr>
+        <tr>
+          <th colspan="4" align="right">Shipping:</th>
+          <td colspan="2">Free</td>
+        </tr>
+        <tr>
+          <th colspan="4" align="right">Order Total:</th>
+          <td colspan="2"><strong>$435.00</strong></td>
+        </tr>
+      </tfoot>
+    </table>
+    <br>
+    <form action="#" method="post">
+      <label for="coupon">Coupon:</label>
+      <input type="text" id="coupon" name="coupon" placeholder="COMIC10">
+      <button type="submit">Apply</button>
+    </form>
+  </section>
+  <hr>
+
+  <!-- Checkout -->
+  <section id="checkout">
+    <h2>Checkout</h2>
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Customer Information</legend>
+        <label for="fname">First Name:</label> <input type="text" id="fname" name="fname" required><br><br>
+        <label for="lname">Last Name:</label> <input type="text" id="lname" name="lname" required><br><br>
+        <label for="email">Email Address:</label> <input type="email" id="email" name="email" required><br><br>
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address" rows="3" cols="35" required></textarea>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>Payment Details</legend>
+        <input type="radio" id="pay1" name="pay" value="card" checked> <label for="pay1">Card</label>
+        <input type="radio" id="pay2" name="pay" value="paypal"> <label for="pay2">PayPal</label>
+        <input type="radio" id="pay3" name="pay" value="cod"> <label for="pay3">COD</label><br><br>
+        <label for="cnum">Card Number:</label> <input type="text" id="cnum" name="cnum" placeholder="1234 5678 9012 3456"><br><br>
+        <label for="cexp">Expiry:</label> <input type="month" id="cexp" name="cexp">
+        <label for="cvv">CVV:</label> <input type="password" id="cvv" name="cvv" maxlength="4" size="4">
+      </fieldset>
+      <br>
+      <button type="submit">Place Order ($435.00)</button>
+    </form>
+  </section>
+  <hr>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>How are comics packaged?</summary>
+      <p>All single issues ship bagged and boarded inside rigid cardboard mailers.</p>
+    </details>
+    <details>
+      <summary>What grading guide do you follow?</summary>
+      <p>We grade according to the Overstreet Comic Book Grading Guide.</p>
+    </details>
+    <details>
+      <summary>When does the pull list ship?</summary>
+      <p>Pull list orders ship on the first Wednesday of every month.</p>
+    </details>
+  </section>
+  <hr>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Comic Book Store. All rights reserved.</p>
+    <p><a href="#search">Top</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Sale</a></p>
+  </footer>
+
+</body>
+</html>
