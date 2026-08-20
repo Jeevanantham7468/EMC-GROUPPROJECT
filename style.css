@@ -30,15 +30,12 @@ body {
     padding: 18px 7%;
     background: rgba(7, 7, 10, 0.92);
     border-bottom: 1px solid #25252d;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     position: sticky;
     top: 0;
     z-index: 999;
-
     backdrop-filter: blur(15px);
 }
 
@@ -80,6 +77,7 @@ nav a:hover {
     color: white;
     text-decoration: none;
     font-size: 14px;
+    font-weight: 600;
 }
 
 .nav-buttons button {
@@ -93,17 +91,14 @@ nav a:hover {
 .hero {
     min-height: 650px;
     padding: 80px 8%;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 70px;
-
     background:
         radial-gradient(circle at 80% 40%, #35101a 0%, transparent 35%),
         radial-gradient(circle at 20% 80%, #151528 0%, transparent 30%),
         #07070a;
-
     position: relative;
     overflow: hidden;
 }
@@ -113,12 +108,9 @@ nav a:hover {
     position: absolute;
     right: -50px;
     top: 80px;
-
-    font-family: "Bebas Neue";
+    font-family: "Bebas Neue", sans-serif;
     font-size: 180px;
-
     color: rgba(255, 255, 255, 0.02);
-
     transform: rotate(-10deg);
 }
 
@@ -132,6 +124,7 @@ nav a:hover {
     font-size: 13px;
     letter-spacing: 5px;
     font-weight: 600;
+    display: block;
 }
 
 .hero h2 {
@@ -139,7 +132,6 @@ nav a:hover {
     font-size: 85px;
     line-height: 0.95;
     letter-spacing: 2px;
-
     margin: 20px 0;
 }
 
@@ -148,7 +140,7 @@ nav a:hover {
     text-shadow: 0 0 25px rgba(255, 48, 79, 0.35);
 }
 
-.hero-content>p:not(.small-title) {
+.hero-content > p:not(.small-title) {
     color: #a4a4ad;
     font-size: 16px;
     max-width: 500px;
@@ -158,17 +150,12 @@ nav a:hover {
 .hero-btn {
     display: inline-block;
     padding: 14px 30px;
-
     background: #ff304f;
     color: white;
-
     text-decoration: none;
     font-weight: 600;
-
     border-radius: 4px;
-
     box-shadow: 0 10px 30px rgba(255, 48, 79, 0.25);
-
     transition: 0.3s;
 }
 
@@ -182,20 +169,17 @@ nav a:hover {
 }
 
 .hero-image img {
-    width: 450px;
+    width: 420px;
     max-width: 100%;
-
     border-radius: 14px;
-
     border: 1px solid #33333c;
-
     box-shadow:
         0 30px 80px rgba(0, 0, 0, 0.7),
         0 0 40px rgba(255, 48, 79, 0.12);
-
     transform: rotate(2deg);
-
     transition: 0.4s;
+    display: block;
+    object-fit: cover;
 }
 
 .hero-image img:hover {
@@ -210,17 +194,14 @@ nav a:hover {
     max-width: 1100px;
     margin: 60px auto;
     padding: 30px;
-
     background: #101015;
-
     border: 1px solid #26262f;
     border-radius: 12px;
-
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
 }
 
 .search-section h2 {
-    font-family: "Bebas Neue";
+    font-family: "Bebas Neue", sans-serif;
     font-size: 32px;
     letter-spacing: 1px;
     margin-bottom: 20px;
@@ -229,21 +210,20 @@ nav a:hover {
 .search-section form {
     display: flex;
     gap: 12px;
+    flex-wrap: wrap;
 }
 
 .search-section input,
 .search-section select {
     flex: 1;
-
+    min-width: 180px;
     padding: 14px;
-
     background: #08080b;
     color: white;
-
     border: 1px solid #30303a;
     border-radius: 5px;
-
     outline: none;
+    font-family: inherit;
 }
 
 .search-section input:focus,
@@ -255,17 +235,12 @@ nav a:hover {
 button {
     border: none;
     cursor: pointer;
-
     background: #ff304f;
     color: white;
-
     padding: 12px 20px;
-
     border-radius: 5px;
-
     font-family: inherit;
     font-weight: 600;
-
     transition: 0.3s;
 }
 
@@ -296,7 +271,7 @@ section:not(.hero) {
 }
 
 .section-heading h2 {
-    font-family: "Bebas Neue";
+    font-family: "Bebas Neue", sans-serif;
     font-size: 45px;
     letter-spacing: 1px;
 }
@@ -312,13 +287,9 @@ section:not(.hero) {
 .product-slider {
     display: flex;
     gap: 22px;
-
     overflow-x: auto;
-
     scroll-behavior: smooth;
-
     scrollbar-width: none;
-
     padding: 10px 5px 25px;
 }
 
@@ -328,25 +299,18 @@ section:not(.hero) {
 
 .product-card {
     min-width: 260px;
-
+    flex-shrink: 0;
     background: #101015;
-
     border: 1px solid #282832;
-
     border-radius: 10px;
-
     overflow: hidden;
-
     transition: 0.4s;
-
     position: relative;
 }
 
 .product-card:hover {
     transform: translateY(-10px);
-
     border-color: #ff304f;
-
     box-shadow:
         0 20px 50px rgba(0, 0, 0, 0.6),
         0 0 25px rgba(255, 48, 79, 0.12);
@@ -364,10 +328,9 @@ section:not(.hero) {
 .product-image img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     transition: 0.5s;
+    display: block;
 }
 
 .product-card:hover .product-image img {
@@ -376,21 +339,16 @@ section:not(.hero) {
 
 .badge {
     position: absolute;
-
     top: 12px;
     left: 12px;
-
     padding: 5px 10px;
-
     background: #ff304f;
     color: white;
-
     font-size: 10px;
     font-weight: 700;
-
     border-radius: 3px;
-
     letter-spacing: 1px;
+    z-index: 2;
 }
 
 /* PRODUCT INFO */
@@ -401,9 +359,10 @@ section:not(.hero) {
 
 .publisher {
     color: #ff304f !important;
-    font-size: 10px !important;
+    font-size: 11px !important;
     letter-spacing: 2px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 .product-info h3 {
@@ -411,7 +370,7 @@ section:not(.hero) {
     margin: 7px 0;
 }
 
-.product-info>p:not(.publisher) {
+.product-info > p:not(.publisher) {
     color: #777780;
     font-size: 13px;
 }
@@ -420,7 +379,6 @@ section:not(.hero) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     margin-top: 18px;
 }
 
@@ -429,7 +387,7 @@ section:not(.hero) {
 }
 
 .product-bottom button {
-    padding: 8px 13px;
+    padding: 8px 14px;
     font-size: 12px;
 }
 
@@ -437,25 +395,19 @@ section:not(.hero) {
 
 .slider-btn {
     position: absolute;
-
     top: 42%;
-
     width: 45px;
     height: 45px;
-
     padding: 0;
-
     border-radius: 50%;
-
     background: #15151b;
-
     border: 1px solid #444450;
-
     color: white;
-
     font-size: 20px;
-
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .slider-btn:hover {
@@ -483,13 +435,9 @@ section:not(.hero) {
 
 .comic-item {
     background: #101015;
-
     border: 1px solid #282832;
-
     border-radius: 10px;
-
     overflow: hidden;
-
     transition: 0.3s;
 }
 
@@ -501,8 +449,8 @@ section:not(.hero) {
 .comic-item img {
     width: 100%;
     height: 270px;
-
     object-fit: cover;
+    display: block;
 }
 
 .comic-item div {
@@ -517,12 +465,13 @@ section:not(.hero) {
     color: #ff304f;
     font-size: 12px;
     margin: 5px 0;
+    font-weight: 600;
 }
 
 .comic-item strong {
     display: block;
     font-size: 18px;
-    margin: 10px 0;
+    margin: 10px 0 15px;
 }
 
 /* =========================================
@@ -533,34 +482,33 @@ section:not(.hero) {
     background:
         radial-gradient(circle at 90% 10%, #32121a, transparent 30%),
         #101015;
-
     border: 1px solid #292932;
-
     border-radius: 12px;
+    padding: 35px;
 }
 
 .pull-list form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .pull-list label {
     background: #17171d;
-
     border: 1px solid #272730;
-
     padding: 15px;
-
     border-radius: 6px;
-
     color: #c7c7cd;
-
     transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
 }
 
 .pull-list label:hover {
     border-color: #ff304f;
+    color: white;
 }
 
 /* =========================================
@@ -569,35 +517,29 @@ section:not(.hero) {
 
 .cart-box {
     background: #101015;
-
     border: 1px solid #282832;
-
     padding: 22px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     border-radius: 8px;
+    margin-bottom: 12px;
 }
 
 .cart-box strong {
     color: #ff304f;
+    font-size: 18px;
 }
 
 .cart-total {
     margin-top: 15px;
-
     padding: 22px;
-
     display: flex;
     justify-content: space-between;
-
     background: #ff304f;
-
     border-radius: 8px;
-
     font-size: 18px;
+    font-weight: bold;
 }
 
 /* =========================================
@@ -606,15 +548,10 @@ section:not(.hero) {
 
 details {
     background: #101015;
-
     border: 1px solid #282832;
-
     margin: 10px 0;
-
     padding: 20px;
-
     border-radius: 7px;
-
     transition: 0.3s;
 }
 
@@ -634,25 +571,122 @@ details p {
 }
 
 /* =========================================
+   CONTACT
+   ========================================= */
+
+.contact {
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(255, 48, 79, 0.12),
+            transparent 35%
+        ),
+        #101015;
+    border: 1px solid #282832;
+    border-radius: 12px;
+    padding: 40px;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.contact-info {
+    padding: 10px;
+}
+
+.contact-info h3 {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 38px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.contact-info > p {
+    color: #888892;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.contact-details {
+    margin-top: 30px;
+}
+
+.contact-details p {
+    color: #c8c8ce;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+/* CONTACT FORM */
+
+.contact-form {
+    background: #08080b;
+    border: 1px solid #282832;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    color: #d6d6dc;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 13px;
+    background: #111116;
+    color: white;
+    border: 1px solid #30303a;
+    border-radius: 5px;
+    font-family: inherit;
+    outline: none;
+    resize: vertical;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #ff304f;
+    box-shadow: 0 0 15px rgba(255, 48, 79, 0.12);
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 5px;
+}
+
+/* =========================================
    FOOTER
    ========================================= */
 
 footer {
     margin-top: 100px;
-
     background: #050507;
-
     border-top: 1px solid #25252d;
-
     text-align: center;
-
     padding: 50px 20px;
 }
 
 footer h2 {
-    font-family: "Bebas Neue";
+    font-family: "Bebas Neue", sans-serif;
     font-size: 35px;
     letter-spacing: 2px;
+}
+
+footer h2 span {
+    color: #ff304f;
 }
 
 .footer-links {
@@ -661,13 +695,9 @@ footer h2 {
 
 .footer-links a {
     color: #888892;
-
     text-decoration: none;
-
     margin: 0 12px;
-
     font-size: 13px;
-
     transition: 0.3s;
 }
 
@@ -681,29 +711,45 @@ footer h2 {
 }
 
 /* =========================================
-   MOBILE
+   MOBILE RESPONSIVENESS
    ========================================= */
 
 @media (max-width: 768px) {
-
     .navbar {
         padding: 15px 5%;
+        position: relative;
     }
 
     nav {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #07070a;
+        border-bottom: 1px solid #25252d;
+        padding: 20px;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
     }
 
     .nav-buttons button {
         display: block;
+        font-size: 18px;
+        padding: 6px 12px;
     }
 
     .hero {
         min-height: auto;
         padding: 70px 20px;
-
         flex-direction: column;
-
         text-align: center;
     }
 
@@ -712,7 +758,7 @@ footer h2 {
     }
 
     .hero-image img {
-        width: 330px;
+        width: 300px;
     }
 
     .search-section form {
@@ -740,60 +786,6 @@ footer h2 {
         align-items: flex-start;
         gap: 15px;
     }
-}
-
-
-.contact-form {
-    background: #08080b;
-    border: 1px solid #282832;
-    padding: 30px;
-    border-radius: 10px;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 18px;
-}
-
-.input-group label {
-    color: #d6d6dc;
-    font-size: 13px;
-    margin-bottom: 7px;
-}
-
-.input-group input,
-.input-group textarea {
-    width: 100%;
-    padding: 13px;
-
-    background: #111116;
-    color: white;
-
-    border: 1px solid #30303a;
-    border-radius: 5px;
-
-    font-family: inherit;
-    outline: none;
-
-    resize: vertical;
-}
-
-.input-group input:focus,
-.input-group textarea:focus {
-    border-color: #ff304f;
-    box-shadow: 0 0 15px rgba(255, 48, 79, 0.12);
-}
-
-.contact-form button {
-    width: 100%;
-    padding: 14px;
-    margin-top: 5px;
-}
-
-/* MOBILE CONTACT */
-
-@media (max-width: 768px) {
 
     .contact-container {
         grid-template-columns: 1fr;
@@ -803,120 +795,4 @@ footer h2 {
     .contact-form {
         padding: 20px;
     }
-
-}
-/* =========================================
-   CONTACT
-   ========================================= */
-
-.contact {
-    background:
-        radial-gradient(
-            circle at 10% 20%,
-            rgba(255, 48, 79, 0.12),
-            transparent 35%
-        ),
-        #101015;
-
-    border: 1px solid #282832;
-    border-radius: 12px;
-}
-
-.contact-container {
-    display: grid;
-    grid-template-columns: 0.8fr 1.2fr;
-    gap: 50px;
-    align-items: start;
-}
-
-.contact-info {
-    padding: 20px;
-}
-
-.contact-info h3 {
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 38px;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
-}
-
-.contact-info > p {
-    color: #888892;
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-.contact-details {
-    margin-top: 30px;
-}
-
-.contact-details p {
-    color: #c8c8ce;
-    margin: 15px 0;
-    font-size: 14px;
-}
-
-/* FORM */
-
-.contact-form {
-    background: #08080b;
-    border: 1px solid #282832;
-    padding: 30px;
-    border-radius: 10px;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 18px;
-}
-
-.input-group label {
-    color: #d6d6dc;
-    font-size: 13px;
-    margin-bottom: 7px;
-}
-
-.input-group input,
-.input-group textarea {
-    width: 100%;
-    padding: 13px;
-
-    background: #111116;
-    color: white;
-
-    border: 1px solid #30303a;
-    border-radius: 5px;
-
-    font-family: inherit;
-    outline: none;
-
-    resize: vertical;
-}
-
-.input-group input:focus,
-.input-group textarea:focus {
-    border-color: #ff304f;
-    box-shadow: 0 0 15px rgba(255, 48, 79, 0.12);
-}
-
-.contact-form button {
-    width: 100%;
-    padding: 14px;
-    margin-top: 5px;
-}
-
-/* MOBILE CONTACT */
-
-@media (max-width: 768px) {
-
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .contact-form {
-        padding: 20px;
-    }
-
 }
