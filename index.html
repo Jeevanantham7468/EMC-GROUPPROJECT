@@ -1,270 +1,625 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Comic Store</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ComicVerse - Comic Book Store</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Comic Book Store</h1>
-    <p>Single issues, graphic novels, manga, and collector variants.</p>
-    <nav>
-      <ul>
-        <li><a href="#search">Search</a></li>
-        <li><a href="#featured">Featured</a></li>
-        <li><a href="#catalog">Catalog</a></li>
-        <li><a href="#pull-list">Pull List</a></li>
-        <li><a href="#cart">Cart</a></li>
-        <li><a href="#checkout">Checkout</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </nav>
-  </header>
-  <hr>
+    <!-- NAVBAR -->
+    <header class="navbar">
 
-  <!-- Search & Filter -->
-  <section id="search">
-    <h2>Search & Filter</h2>
-    <form action="#" method="get">
-      <label for="search-box">Search Title:</label>
-      <input type="search" id="search-box" name="query" placeholder="Spider-Man, Batman...">
-      <label for="publisher">Publisher:</label>
-      <select id="publisher" name="publisher">
-        <option value="">All</option>
-        <option value="marvel">Marvel</option>
-        <option value="dc">DC</option>
-        <option value="manga">Manga</option>
-        <option value="image">Image</option>
-      </select>
-      <label for="era">Era:</label>
-      <select id="era" name="era">
-        <option value="">All Eras</option>
-        <option value="golden">Golden Age</option>
-        <option value="silver">Silver Age</option>
-        <option value="modern">Modern Age</option>
-      </select>
-      <label for="sort">Sort:</label>
-      <select id="sort" name="sort">
-        <option value="popular">Popular</option>
-        <option value="price-asc">Price: Low to High</option>
-        <option value="price-desc">Price: High to Low</option>
-      </select>
-      <button type="submit">Filter</button>
-      <button type="reset">Reset</button>
-    </form>
-  </section>
-  <hr>
+        <div class="logo">
+            <h1>COMIC<span>UNIVERSE</span></h1>
+        </div>
 
-  <!-- Featured Issue -->
-  <section id="featured">
-    <h2>Featured Key Issue</h2>
-    <article>
-      <h3>The Amazing Spider-Man #300 (1988)</h3>
-      <p><strong>Notes:</strong> 1st full appearance of Venom (Eddie Brock).</p>
-      <p><strong>Stock Left:</strong> <progress value="3" max="10">3/10</progress> (3 copies remaining)</p>
-      <form action="#" method="post">
-        <label for="grade-feat">Condition:</label>
-        <select id="grade-feat" name="grade">
-          <option value="vf">Raw - Very Fine (8.0) - $385.00</option>
-          <option value="nm">Raw - Near Mint (9.4) - $495.00</option>
-          <option value="cgc">CGC Slab (9.6) - $750.00</option>
-        </select>
-        <label for="qty-feat">Qty:</label>
-        <input type="number" id="qty-feat" name="qty" value="1" min="1" max="3">
-        <button type="submit">Add to Cart</button>
-      </form>
-    </article>
-  </section>
-  <hr>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#catalog">Catalog</a></li>
+                <li><a href="#pull-list">Pull List</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                 <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
 
-  <!-- Catalog Table -->
-  <section id="catalog">
-    <h2>Comic Catalog</h2>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Publisher</th>
-          <th>Grade</th>
-          <th>Price</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Batman: The Killing Joke</td>
-          <td>DC Comics</td>
-          <td>Near Mint (9.4)</td>
-          <td>$120.00</td>
-          <td><button type="button">Add</button></td>
-        </tr>
-        <tr>
-          <td>X-Men #1 (1991)</td>
-          <td>Marvel</td>
-          <td>Mint (9.8)</td>
-          <td>$25.00</td>
-          <td><button type="button">Add</button></td>
-        </tr>
-        <tr>
-          <td>Berserk Vol. 1</td>
-          <td>Manga</td>
-          <td>Brand New</td>
-          <td>$14.99</td>
-          <td><button type="button">Add</button></td>
-        </tr>
-        <tr>
-          <td>Spawn #1</td>
-          <td>Image</td>
-          <td>Near Mint (9.4)</td>
-          <td>$45.00</td>
-          <td><button type="button">Add</button></td>
-        </tr>
-        <tr>
-          <td>Action Comics #1 Reprint</td>
-          <td>DC Comics</td>
-          <td>Mint (9.8)</td>
-          <td>$19.99</td>
-          <td><button type="button">Add</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-  <hr>
+        <div class="nav-buttons">
+            <a href="#cart">🛒 Cart</a>
+            <button id="menu-btn">☰</button>
+        </div>
 
-  <!-- Pull List -->
-  <section id="pull-list">
-    <h2>Monthly Pull List Subscription</h2>
-    <p>Reserve recurring weekly issues:</p>
-    <form action="#" method="post">
-      <fieldset>
-        <legend>Select Series</legend>
-        <input type="checkbox" id="p1" name="pull" value="spiderman"> <label for="p1">The Amazing Spider-Man</label><br>
-        <input type="checkbox" id="p2" name="pull" value="batman"> <label for="p2">Batman / Detective Comics</label><br>
-        <input type="checkbox" id="p3" name="pull" value="xmen"> <label for="p3">Uncanny X-Men</label><br>
-        <input type="checkbox" id="p4" name="pull" value="manga"> <label for="p4">One Piece Monthly</label>
-      </fieldset>
-      <br>
-      <fieldset>
-        <legend>Protection Choice</legend>
-        <input type="radio" id="b1" name="bag" value="standard" checked> <label for="b1">Standard Bag & Board (Free)</label><br>
-        <input type="radio" id="b2" name="bag" value="mylar"> <label for="b2">Archival Mylar Sleeve (+$0.75)</label>
-      </fieldset>
-      <br>
-      <button type="submit">Save Pull List</button>
-    </form>
-  </section>
-  <hr>
+    </header>
 
-  <!-- Shopping Cart -->
-  <section id="cart">
-    <h2>Shopping Cart</h2>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Grade</th>
-          <th>Price</th>
-          <th>Qty</th>
-          <th>Total</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>The Amazing Spider-Man #300</td>
-          <td>Raw VF (8.0)</td>
-          <td>$385.00</td>
-          <td>1</td>
-          <td>$385.00</td>
-          <td><button type="button">Delete</button></td>
-        </tr>
-        <tr>
-          <td>X-Men #1 (1991)</td>
-          <td>Mint (9.8)</td>
-          <td>$25.00</td>
-          <td>2</td>
-          <td>$50.00</td>
-          <td><button type="button">Delete</button></td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr>
-          <th colspan="4" align="right">Subtotal:</th>
-          <td colspan="2">$435.00</td>
-        </tr>
-        <tr>
-          <th colspan="4" align="right">Shipping:</th>
-          <td colspan="2">Free</td>
-        </tr>
-        <tr>
-          <th colspan="4" align="right">Order Total:</th>
-          <td colspan="2"><strong>$435.00</strong></td>
-        </tr>
-      </tfoot>
-    </table>
-    <br>
-    <form action="#" method="post">
-      <label for="coupon">Coupon:</label>
-      <input type="text" id="coupon" name="coupon" placeholder="COMIC10">
-      <button type="submit">Apply</button>
-    </form>
-  </section>
-  <hr>
 
-  <!-- Checkout -->
-  <section id="checkout">
-    <h2>Checkout</h2>
-    <form action="#" method="post">
-      <fieldset>
-        <legend>Customer Information</legend>
-        <label for="fname">First Name:</label> <input type="text" id="fname" name="fname" required><br><br>
-        <label for="lname">Last Name:</label> <input type="text" id="lname" name="lname" required><br><br>
-        <label for="email">Email Address:</label> <input type="email" id="email" name="email" required><br><br>
-        <label for="address">Address:</label><br>
-        <textarea id="address" name="address" rows="3" cols="35" required></textarea>
-      </fieldset>
-      <br>
-      <fieldset>
-        <legend>Payment Details</legend>
-        <input type="radio" id="pay1" name="pay" value="card" checked> <label for="pay1">Card</label>
-        <input type="radio" id="pay2" name="pay" value="paypal"> <label for="pay2">PayPal</label>
-        <input type="radio" id="pay3" name="pay" value="cod"> <label for="pay3">COD</label><br><br>
-        <label for="cnum">Card Number:</label> <input type="text" id="cnum" name="cnum" placeholder="1234 5678 9012 3456"><br><br>
-        <label for="cexp">Expiry:</label> <input type="month" id="cexp" name="cexp">
-        <label for="cvv">CVV:</label> <input type="password" id="cvv" name="cvv" maxlength="4" size="4">
-      </fieldset>
-      <br>
-      <button type="submit">Place Order ($435.00)</button>
-    </form>
-  </section>
-  <hr>
+    <!-- HERO -->
+    <section class="hero" id="home">
 
-  <!-- FAQ -->
-  <section id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <details>
-      <summary>How are comics packaged?</summary>
-      <p>All single issues ship bagged and boarded inside rigid cardboard mailers.</p>
-    </details>
-    <details>
-      <summary>What grading guide do you follow?</summary>
-      <p>We grade according to the Overstreet Comic Book Grading Guide.</p>
-    </details>
-    <details>
-      <summary>When does the pull list ship?</summary>
-      <p>Pull list orders ship on the first Wednesday of every month.</p>
-    </details>
-  </section>
-  <hr>
+        <div class="hero-content">
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Comic Book Store. All rights reserved.</p>
-    <p><a href="#search">Top</a> | <a href="#">Privacy Policy</a> | <a href="#">Terms of Sale</a></p>
-  </footer>
+            <p class="small-title">WELCOME TO COMICVERSE</p>
+
+            <h2>
+                Your World of
+                <span>Superheroes</span>
+            </h2>
+
+            <p>
+                Discover legendary comics, manga, collector editions
+                and rare issues all in one place.
+            </p>
+
+            <a href="#catalog" class="hero-btn">
+                Explore Comics
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+            <img id="hero-slide" src="comic1.jpg" alt="Comic Books">
+        </div>
+
+    </section>
+    <!-- SEARCH -->
+    <section class="search-section" id="search">
+
+        <h2>Find Your Comic</h2>
+
+        <form>
+
+            <input type="search" id="search-box" placeholder="Search Spider-Man, Batman...">
+
+            <select id="publisher">
+                <option value="all">All Publishers</option>
+                <option value="Marvel">Marvel</option>
+                <option value="DC">DC</option>
+                <option value="Manga">Manga</option>
+                <option value="Image">Image</option>
+            </select>
+
+            <button type="submit">
+                Search
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- FEATURED -->
+    <section class="featured" id="featured">
+
+        <div class="section-heading">
+            <p>COLLECTOR'S CHOICE</p>
+            <h2>Featured Comics</h2>
+        </div>
+
+
+        <!-- SWIPE CONTAINER -->
+
+        <div class="slider-container">
+
+            <button class="slider-btn prev" id="prev">
+                &#10094;
+            </button>
+
+            <div class="product-slider" id="product-slider">
+
+                <!-- PRODUCT 1 -->
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img src="comic2.jpg" alt="Amazing Spider-Man">
+
+                        <span class="badge">
+                            HOT
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p class="publisher">
+                            MARVEL
+                        </p>
+
+                        <h3>
+                            Amazing Spider-Man #300
+                        </h3>
+
+                        <p>
+                            First full appearance of Venom.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>$385.00</strong>
+
+                            <button>
+                                Add
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 2 -->
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img src="comic3.jpg" alt="Batman Killing Joke">
+
+                        <span class="badge">
+                            DC
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p class="publisher">
+                            DC COMICS
+                        </p>
+
+                        <h3>
+                            Batman: The Killing Joke
+                        </h3>
+
+                        <p>
+                            A legendary Batman graphic novel.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>$120.00</strong>
+
+                            <button>
+                                Add
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 3 -->
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img src="comic4.jpg" alt="X-Men comic">
+
+                        <span class="badge">
+                            NEW
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p class="publisher">
+                            MARVEL
+                        </p>
+
+                        <h3>
+                            X-Men #1
+                        </h3>
+
+                        <p>
+                            The classic 1991 collector issue.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>$25.00</strong>
+
+                            <button>
+                                Add
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 4 -->
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img src="comics.jpg" alt="Berserk manga">
+
+                        <span class="badge">
+                            MANGA
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p class="publisher">
+                            MANGA
+                        </p>
+
+                        <h3>
+                            Berserk Vol. 1
+                        </h3>
+
+                        <p>
+                            Begin the legendary manga series.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>$14.99</strong>
+
+                            <button>
+                                Add
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PRODUCT 5 -->
+                <article class="product-card">
+
+                    <div class="product-image">
+
+                        <img src="cart1.jpg" alt="Spawn comic">
+
+                        <span class="badge">
+                            RARE
+                        </span>
+
+                    </div>
+
+                    <div class="product-info">
+
+                        <p class="publisher">
+                            IMAGE
+                        </p>
+
+                        <h3>
+                            Spawn #1
+                        </h3>
+
+                        <p>
+                            The iconic Image Comics debut.
+                        </p>
+
+                        <div class="product-bottom">
+
+                            <strong>$45.00</strong>
+
+                            <button>
+                                Add
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <button class="slider-btn next" id="next">
+                &#10095;
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CATALOG -->
+    <section class="catalog" id="catalog">
+
+        <div class="section-heading">
+
+            <p>SHOP NOW</p>
+
+            <h2>Comic Catalog</h2>
+
+        </div>
+
+        <div class="catalog-grid">
+
+            <article class="comic-item">
+
+                <img src="cart1.jpg" alt="Action Comics">
+
+                <div>
+                    <h3>Action Comics #1 Reprint</h3>
+                    <p>DC Comics</p>
+                    <strong>$19.99</strong>
+                    <button>Add to Cart</button>
+                </div>
+
+            </article>
+
+
+            <article class="comic-item">
+
+                <img src="cart2.jpg" alt="One Piece">
+
+                <div>
+                    <h3>One Piece Vol. 1</h3>
+                    <p>Manga</p>
+                    <strong>$12.99</strong>
+                    <button>Add to Cart</button>
+                </div>
+
+            </article>
+
+
+            <article class="comic-item">
+
+                <img src="cart3.jpg" alt="Deadpool">
+
+                <div>
+                    <h3>Deadpool Classic</h3>
+                    <p>Marvel</p>
+                    <strong>$29.99</strong>
+                    <button>Add to Cart</button>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- PULL LIST -->
+    <section class="pull-list" id="pull-list">
+
+        <div class="section-heading">
+
+            <p>NEVER MISS AN ISSUE</p>
+
+            <h2>Monthly Pull List</h2>
+
+        </div>
+
+        <form>
+
+            <label>
+                <input type="checkbox">
+                Amazing Spider-Man
+            </label>
+
+            <label>
+                <input type="checkbox">
+                Batman
+            </label>
+
+            <label>
+                <input type="checkbox">
+                X-Men
+            </label>
+
+            <label>
+                <input type="checkbox">
+                One Piece
+            </label>
+
+            <button type="submit">
+                Save Pull List
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- CART -->
+    <section class="cart" id="cart">
+
+        <div class="section-heading">
+
+            <p>YOUR ORDER</p>
+
+            <h2>Shopping Cart</h2>
+
+        </div>
+
+        <div class="cart-box">
+
+            <p>Amazing Spider-Man #300</p>
+
+            <strong>$385.00</strong>
+
+            <button>
+                Remove
+            </button>
+
+        </div>
+
+        <div class="cart-total">
+
+            <span>Total</span>
+
+            <strong>$385.00</strong>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <li><a href="#contact">Contact</a></li>
+    <section class="contact" id="contact">
+
+        <div class="section-heading">
+            <p>GET IN TOUCH</p>
+            <h2>Contact Us</h2>
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>Let's Talk Comics!</h3>
+
+                <p>
+                    Have a question about an order, comic, manga,
+                    or collector edition? Send us a message.
+                </p>
+
+                <div class="contact-details">
+
+                    <p>📧 comicverse@gmail.com</p>
+                    <p>📞 +91 98765 43210</p>
+                    <p>📍 Chennai, Tamil Nadu</p>
+
+                </div>
+
+            </div>
+
+
+            <form class="contact-form">
+
+                <div class="input-group">
+
+                    <label for="name">Name</label>
+
+                    <input type="text" id="name" placeholder="Enter your name" required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="email">Email</label>
+
+                    <input type="email" id="email" placeholder="Enter your email" required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="subject">Subject</label>
+
+                    <input type="text" id="subject" placeholder="Enter subject" required>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="message">Message</label>
+
+                    <textarea id="message" rows="6" placeholder="Write your message..." required></textarea>
+
+                </div>
+
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+
+        <div class="section-heading">
+
+            <p>NEED HELP?</p>
+
+            <h2>Frequently Asked Questions</h2>
+
+        </div>
+
+        <details>
+            <summary>
+                How are comics packaged?
+            </summary>
+
+            <p>
+                Comics are bagged and boarded before shipping.
+            </p>
+        </details>
+
+        <details>
+            <summary>
+                Do you sell manga?
+            </summary>
+
+            <p>
+                Yes. We have a dedicated manga collection.
+            </p>
+        </details>
+
+        <details>
+            <summary>
+                Do you accept returns?
+            </summary>
+
+            <p>
+                Returns are accepted according to our store policy.
+            </p>
+        </details>
+
+    </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h2>ComicVerse</h2>
+
+        <p>
+            Your home for comics, manga and collector editions.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+            <a href="#catalog">Catalog</a>
+            <a href="#cart">Cart</a>
+            <a href="#faq">FAQ</a>
+
+        </div>
+
+        <p class="copyright">
+            © 2040 ComicVerse. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
